@@ -125,14 +125,6 @@ ul.clean li::before{content:"";position:absolute;left:3px;top:.5em;width:12px;he
 .herr b{font-family:var(--display)}
 .herr span{color:var(--muted);font-size:.94rem}
 
-/* Semana a semana */
-.cal{display:grid;grid-template-columns:1fr;gap:28px}
-.cal h3{margin-bottom:14px}
-.cal ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;border-left:2px dashed var(--line-strong);margin-left:6px}
-.cal li{position:relative;padding:0 0 20px 22px}
-.cal li::before{content:"";position:absolute;left:-8px;top:.4em;width:14px;height:14px;border-radius:50%;background:var(--band);border:2.5px solid var(--accent)}
-.cal li:last-child{padding-bottom:0}
-.cal .sem{font-family:var(--mono);font-size:.76rem;color:var(--accent);letter-spacing:.1em;text-transform:uppercase}
 
 /* Inversión */
 .precio-card{background:var(--ink);color:#FFFFFF;border-radius:20px;padding:30px 26px;display:flex;flex-direction:column;gap:22px}
@@ -167,7 +159,7 @@ footer a{color:var(--ink);font-weight:600;text-decoration:none}
   .band{padding-block:96px}
   .hero{padding-block:88px 96px}
   .ritmo{grid-template-columns:repeat(3,minmax(0,1fr))}
-  .bloques,.cal,.dos{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+  .bloques,.dos{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
   .herr{grid-template-columns:repeat(4,minmax(0,1fr))}
   .bloques.tres{grid-template-columns:repeat(3,minmax(0,1fr))}
   .exp{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;padding:36px;align-items:center}
@@ -383,36 +375,8 @@ footer a{color:var(--ink);font-weight:600;text-decoration:none}
     </div>
   </section>
 
-  <section class="band">
-    <div class="in stack">
-      <div class="sec-head">
-        <span class="eyebrow">Calendario</span>
-        <h2>Semana a semana</h2>
-      </div>
-      <div class="cal">
-        <div>
-          <h3>Primer mes</h3>
-          <ol>
-            <li><span class="sem">Semana 1</span><p>Reunión de arranque, accesos y recolección de precios de compra y gastos.</p></li>
-            <li><span class="sem">Semana 2</span><p>Ingresos, egresos y punto de equilibrio. Primer informe.</p></li>
-            <li><span class="sem">Semana 3</span><p>Sistema con las ventas de la web y del local, stock compartido, carga de costos y calculadora de precios.</p></li>
-            <li><span class="sem">Semana 4</span><p>Ganancia por producto, presupuesto de publicidad y capacitación.</p></li>
-          </ol>
-        </div>
-        <div>
-          <h3>Segundo mes</h3>
-          <ol>
-            <li><span class="sem">Semana 5</span><p>Medición instalada, diagnóstico de la tienda actual y propuesta de diseño.</p></li>
-            <li><span class="sem">Semana 6</span><p>Rediseño de inicio, categorías y fichas de producto. Análisis de ventas del local.</p></li>
-            <li><span class="sem">Semana 7</span><p>Carrito, celular y velocidad. Plan para el local y plan de publicidad con el equipo de ads.</p></li>
-            <li><span class="sem">Semana 8</span><p>Lanzamiento de la tienda nueva, ajustes e informe de resultados.</p></li>
-          </ol>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <section class="band alt" id="inversion">
+  <section class="band" id="inversion">
     <div class="in stack">
       <div class="sec-head">
         <span class="eyebrow">Inversión</span>
@@ -456,7 +420,7 @@ footer a{color:var(--ink);font-weight:600;text-decoration:none}
     </div>
   </section>
 
-  <section class="band">
+  <section class="band alt">
     <div class="in yo">
       <div class="yo-top">
         <div class="avatar" aria-hidden="true">NDR</div>
