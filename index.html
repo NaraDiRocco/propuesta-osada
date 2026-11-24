@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="robots" content="noindex">
+<title>Propuesta Osada Indumentaria</title>
+<meta name="description" content="Propuesta de trabajo de Naradi Rocco para Osada Indumentaria: números del negocio, sistema a medida conectado a Tienda Nube, tienda, medición y publicidad.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: sitio de una página en modo claro; bandas blancas y grises que alternan, costuras punteadas y una etiqueta colgante para el ejemplo de precio */
+:root{
+  --bg:#FFFFFF; --band:#F4F5F8; --ink:#14161C; --muted:#5B606D; --line:#E1E3EA; --line-strong:#C9CCD6;
+  --accent:#2B3FA0; --accent-ink:#FFFFFF; --accent-soft:#EBEEFA; --chalk:#F2C64E; --chalk-ink:#3A2E0B; --good:#1F7A47;
+  --display:"Bricolage Grotesque", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  --body:"Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --mono:"IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --nav-h:60px;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-h) + 12px)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top, 0px);z-index:30;background:rgba(255,255,255,.92)}
+a{color:var(--accent)}
+a:focus-visible,.btn:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:8px}
+.in{max-width:1040px;margin:0 auto;padding-left:max(20px, env(safe-area-inset-left, 0px));padding-right:max(20px, env(safe-area-inset-right, 0px))}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.12;letter-spacing:-.01em}
+h1{font-size:clamp(2.1rem,7vw,3.9rem);font-weight:800;letter-spacing:-.025em}
+h2{font-size:clamp(1.6rem,4.6vw,2.4rem);font-weight:800}
+h3{font-size:1.15rem;font-weight:700}
+p{margin:0}
+.eyebrow{font-family:var(--mono);font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:500}
+.sec-head{display:flex;flex-direction:column;gap:12px;max-width:680px}
+.sec-head p{color:var(--muted);font-size:1.05rem}
+.band{padding-block:72px}
+.band.alt{background:var(--band)}
+.stack{display:flex;flex-direction:column;gap:36px}
+ul.clean{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+ul.clean li{padding-left:28px;position:relative}
+ul.clean li::before{content:"";position:absolute;left:3px;top:.5em;width:12px;height:12px;border-radius:50%;border:2.5px solid var(--accent)}
+.card{background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:24px}
+.band.alt .card{border-color:transparent;box-shadow:0 1px 2px rgba(20,22,28,.05),0 6px 20px rgba(20,22,28,.05)}
+
+/* Barra superior */
+.nav{position:sticky;top:env(safe-area-inset-top, 0px);z-index:20;background:rgba(255,255,255,.92);-webkit-backdrop-filter:saturate(1.4) blur(12px);backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid var(--line)}
+.nav .in{height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{font-family:var(--display);font-weight:800;font-size:1.1rem;color:var(--ink);text-decoration:none;letter-spacing:-.01em;white-space:nowrap}
+.brand span{color:var(--accent)}
+.nav-links{display:flex;align-items:center;gap:6px}
+.nav-links a.txt{display:none;color:var(--muted);text-decoration:none;font-size:.92rem;font-weight:500;padding:8px 12px;border-radius:8px}
+.nav-links a.txt:hover{color:var(--ink);background:var(--band)}
+.gh{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 14px;border:1px solid var(--line-strong);border-radius:999px;color:var(--ink);text-decoration:none;font-size:.88rem;font-weight:600;white-space:nowrap}
+.gh:hover{border-color:var(--ink)}
+.gh svg{width:18px;height:18px;flex:none}
+
+/* Portada */
+.hero{padding-block:56px 64px;background:radial-gradient(120% 80% at 100% 0%, var(--accent-soft) 0%, rgba(255,255,255,0) 60%), var(--bg)}
+.hero .in{display:flex;flex-direction:column;gap:22px}
+.hero .lead{font-size:clamp(1.05rem,2.6vw,1.25rem);color:var(--muted);max-width:640px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:4px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 24px;border-radius:999px;font-weight:600;text-decoration:none;font-size:1rem}
+.btn.pri{background:var(--accent);color:var(--accent-ink)}
+.btn.pri:hover{background:#22338A}
+.btn.sec{border:1px solid var(--line-strong);color:var(--ink)}
+.btn.sec:hover{border-color:var(--ink)}
+.facts{display:grid;grid-template-columns:1fr;gap:12px;margin-top:18px}
+.facts{background:var(--bg);border:1px solid var(--line);border-radius:16px;gap:0;overflow:hidden}
+.fact{padding:16px 20px;display:flex;flex-direction:column;gap:0;border-top:1px solid var(--line)}
+.fact:first-child{border-top:0}
+.fact b{font-family:var(--display);font-size:1.45rem;font-weight:800;font-variant-numeric:tabular-nums;white-space:nowrap;line-height:1.25}
+.fact span{font-size:.92rem;color:var(--muted)}
+.para{font-family:var(--mono);font-size:.82rem;color:var(--muted)}
+
+/* Forma de trabajo */
+.ritmo{display:grid;grid-template-columns:1fr;gap:16px}
+.ritmo .card{display:flex;flex-direction:column;gap:8px}
+.ritmo .ico{width:40px;height:40px;border-radius:10px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;font-family:var(--mono);font-weight:500;font-size:.95rem}
+.ritmo p{color:var(--muted);font-size:.97rem}
+.nota{font-size:.9rem;color:var(--muted)}
+
+/* Primeros meses */
+.mes{display:flex;flex-direction:column;gap:28px}
+.mes + .mes{padding-top:44px;border-top:2px dashed var(--line-strong)}
+.mes-head{display:flex;flex-direction:column;gap:10px}
+.chip{align-self:flex-start;font-family:var(--mono);font-size:.78rem;background:var(--ink);color:var(--bg);padding:4px 12px;border-radius:999px;letter-spacing:.08em}
+.bloques{display:grid;grid-template-columns:1fr;gap:16px}
+.bloque{display:flex;flex-direction:column;gap:12px;min-width:0}
+.bloque > p{color:var(--muted)}
+.resultado{background:var(--accent-soft);border-radius:16px;padding:22px 24px;display:flex;flex-direction:column;gap:12px}
+
+/* Ejemplo: etiqueta colgante */
+.ejemplo{display:grid;grid-template-columns:1fr;gap:28px;align-items:start}
+.tag{position:relative;width:100%;max-width:330px;margin:0 auto;background:var(--chalk);color:var(--chalk-ink);border-radius:10px 10px 16px 16px;padding:46px 24px 24px;
+  clip-path:polygon(20% 0,80% 0,100% 11%,100% 100%,0 100%,0 11%);font-family:var(--mono);font-size:.9rem;transform:rotate(-2deg)}
+.tag::before{content:"";position:absolute;top:17px;left:50%;width:15px;height:15px;margin-left:-7.5px;border-radius:50%;background:var(--band);box-shadow:inset 0 0 0 2px rgba(58,46,11,.25)}
+.tag .nombre{font-family:var(--display);font-weight:800;font-size:1.2rem;margin-bottom:10px;text-align:center}
+.tag table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+.tag td{padding:3px 0}
+.tag td:last-child{text-align:right}
+.tag tr.total td{border-top:1.5px dashed currentColor;padding-top:8px;font-weight:500}
+.tag .precio{font-family:var(--display);font-size:2rem;font-weight:800;text-align:center;margin:14px 0 2px}
+.tag small{display:block;text-align:center;opacity:.8}
+.cuentas{display:flex;flex-direction:column;gap:14px;min-width:0}
+.filas{display:flex;flex-direction:column;gap:6px}
+.cuenta{display:flex;justify-content:space-between;gap:12px;align-items:baseline}
+.cuenta .v{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+.cuenta.menos{color:var(--muted)}
+.cuenta.final{border-top:2px dashed var(--line-strong);padding-top:10px;margin-top:4px;font-weight:600}
+.cuenta.final .v{color:var(--good);font-size:1.1rem}
+.pregunta{background:var(--bg);border-radius:14px;padding:16px 18px;display:flex;flex-direction:column;gap:4px;box-shadow:0 1px 2px rgba(20,22,28,.05),0 6px 20px rgba(20,22,28,.05)}
+.pregunta b:first-child{font-family:var(--display);font-size:1.02rem}
+
+/* Medición */
+.herr{display:grid;grid-template-columns:1fr;gap:12px}
+.herr div{border:1px solid var(--line);border-radius:14px;padding:16px 18px;min-width:0;display:flex;flex-direction:column;gap:4px}
+.herr b{font-family:var(--display)}
+.herr span{color:var(--muted);font-size:.94rem}
+
+/* Semana a semana */
+.cal{display:grid;grid-template-columns:1fr;gap:28px}
+.cal h3{margin-bottom:14px}
+.cal ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;border-left:2px dashed var(--line-strong);margin-left:6px}
+.cal li{position:relative;padding:0 0 20px 22px}
+.cal li::before{content:"";position:absolute;left:-8px;top:.4em;width:14px;height:14px;border-radius:50%;background:var(--band);border:2.5px solid var(--accent)}
+.cal li:last-child{padding-bottom:0}
+.cal .sem{font-family:var(--mono);font-size:.76rem;color:var(--accent);letter-spacing:.1em;text-transform:uppercase}
+
+/* Inversión */
+.precio-card{background:var(--ink);color:#FFFFFF;border-radius:20px;padding:30px 26px;display:flex;flex-direction:column;gap:22px}
+.precio-card .monto{font-family:var(--display);font-weight:800;font-size:clamp(2.4rem,9vw,3.6rem);line-height:1;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.precio-card .monto small{font-family:var(--body);font-size:1rem;font-weight:500;opacity:.75;letter-spacing:0}
+.precio-card .sub{opacity:.8}
+.precio-card ul.clean li::before{border-color:var(--chalk)}
+.precio-card .pie{font-size:.88rem;opacity:.7;border-top:1px dashed rgba(255,255,255,.3);padding-top:16px}
+.dos{display:grid;grid-template-columns:1fr;gap:16px}
+.dos .card{display:flex;flex-direction:column;gap:14px}
+
+/* Sobre mí */
+.yo{display:flex;flex-direction:column;gap:18px}
+.yo-top{display:flex;align-items:center;gap:16px}
+.avatar{width:64px;height:64px;border-radius:50%;background:var(--accent);color:var(--accent-ink);display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:1.35rem;flex:none}
+.yo-top p{color:var(--muted);font-size:.95rem}
+.yo > p{color:var(--muted);max-width:640px}
+
+footer{border-top:1px solid var(--line);padding-block:28px calc(28px + env(safe-area-inset-bottom, 0px))}
+footer .in{display:flex;flex-direction:column;gap:12px;color:var(--muted);font-size:.88rem}
+footer a{color:var(--ink);font-weight:600;text-decoration:none}
+
+/* Tablet y escritorio */
+@media (min-width:640px){
+  .facts{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .fact{border-top:0;border-left:1px solid var(--line)}
+  .fact:first-child{border-left:0}
+  .ritmo,.herr{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .nav-links a.txt{display:inline-block}
+}
+@media (min-width:900px){
+  .band{padding-block:96px}
+  .hero{padding-block:88px 96px}
+  .ritmo{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .bloques,.cal,.dos{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+  .herr{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .ejemplo{grid-template-columns:minmax(0,330px) minmax(0,1fr);gap:56px}
+  .precio-card{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px 48px;padding:44px}
+  .precio-card .pie{grid-column:1 / -1}
+  .yo{flex-direction:row;align-items:flex-start;gap:40px}
+  .yo-top{flex:none;width:300px}
+  footer .in{flex-direction:row;justify-content:space-between}
+}
+@media (max-width:380px){
+  .gh .lbl{display:none}
+  .gh{padding:0 11px}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="Navegación principal">
+  <div class="in">
+    <a class="brand" href="#inicio">Naradi <span>Rocco</span></a>
+    <div class="nav-links">
+      <a class="txt" href="#alcance">Alcance</a>
+      <a class="txt" href="#inversion">Inversión</a>
+      <a class="gh" href="https://github.com/NaraDiRocco" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" aria-hidden="true" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+        <span class="lbl">GitHub</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+  <header class="hero" id="inicio">
+    <div class="in">
+      <span class="eyebrow">Propuesta de trabajo · Noviembre 2026</span>
+      <h1>Osada Indumentaria: números claros y una tienda que venda más</h1>
+      <p class="lead">Un acompañamiento integral y continuo. Arrancamos ordenando la plata: cuánto entra, cuánto sale, cuánto deja cada prenda y cuánto se puede invertir en publicidad. Después ponemos todo eso a trabajar en la tienda online.</p>
+      <div class="cta">
+        <a class="btn pri" href="#alcance">Ver la propuesta</a>
+        <a class="btn sec" href="#inversion">Inversión</a>
+      </div>
+      <div class="facts">
+        <div class="fact"><b>Continuo</b><span>acompañamiento mes a mes</span></div>
+        <div class="fact"><b>2 reuniones</b><span>por semana, más trabajo diario</span></div>
+        <div class="fact"><b>$ 1.000.000</b><span>abono mensual</span></div>
+      </div>
+      <span class="para">Preparada para Osada Indumentaria · Válida por 15 días</span>
+    </div>
+  </header>
+
+  <section class="band alt">
+    <div class="in stack">
+      <div class="sec-head">
+        <span class="eyebrow">Forma de trabajo</span>
+        <h2>Cómo vamos a trabajar</h2>
+      </div>
+      <div class="ritmo">
+        <div class="card"><span class="ico">2×</span><h3>Dos reuniones por semana</h3><p>Una para revisar avances y decidir, otra para trabajar juntos sobre los temas de la semana. Unas 8 por mes, por videollamada.</p></div>
+        <div class="card"><span class="ico">L–V</span><h3>Trabajo activo todos los días</h3><p>No es una consultoría de reuniones. Entre reunión y reunión estamos armando, cargando, probando y corrigiendo.</p></div>
+        <div class="card"><span class="ico">→</span><h3>Un canal directo</h3><p>Un grupo de WhatsApp para dudas del día a día y para que vean los avances a medida que salen.</p></div>
+      </div>
+      <p class="nota">Ya armé este mismo tipo de sistema para otra marca de indumentaria con tienda online y locales. Eso nos deja empezar rápido y saber dónde suelen estar los problemas.</p>
+    </div>
+  </section>
+
+  <section class="band" id="alcance">
+    <div class="in stack">
+      <div class="sec-head">
+        <span class="eyebrow">Alcance</span>
+        <h2>Así arrancamos: los primeros dos meses</h2>
+        <p>El trabajo sigue mes a mes. Estos son los dos primeros pasos, los que dejan la base armada.</p>
+      </div>
+
+      <div class="mes">
+        <div class="mes-head"><span class="chip">PRIMER MES</span><h3 style="font-size:clamp(1.3rem,3.4vw,1.7rem)">Ordenar los números y tener un sistema propio</h3></div>
+        <div class="bloques">
+          <div class="card bloque">
+            <h3>Diagnóstico de la plata</h3>
+            <p>Juntamos toda la información del negocio y la ponemos en limpio, en lenguaje simple.</p>
+            <ul class="clean">
+              <li><b>Ingresos:</b> cuánto se vende por mes, por canal y por producto.</li>
+              <li><b>Egresos:</b> todo lo que sale, separado en gastos fijos (alquiler, sueldos, servicios) y gastos que dependen de cuánto se vende (comisiones, envíos, packaging).</li>
+              <li><b>Costo real de cada prenda:</b> tela, taller, avíos, etiquetas y packaging.</li>
+              <li><b>Punto de equilibrio:</b> cuánto hay que vender por mes para cubrir todos los gastos. A partir de ahí, todo lo que se vende es ganancia.</li>
+            </ul>
+          </div>
+          <div class="card bloque">
+            <h3>Sistema a medida conectado a Tienda Nube</h3>
+            <p>Una herramienta propia de Osada, con usuario y contraseña, que se actualiza sola con lo que pasa en la tienda.</p>
+            <ul class="clean">
+              <li><b>Todo en un solo lugar:</b> ventas, stock, productos y clientes, sin bajar planillas.</li>
+              <li><b>Carga de costos</b> de cada prenda, con su historial cuando cambian.</li>
+              <li><b>Calculadora de precios:</b> ponen el costo y la ganancia que quieren, y el sistema sugiere el precio de venta.</li>
+              <li><b>Ganancia exacta</b> por prenda, por venta y por mes, después de impuestos y comisiones.</li>
+              <li><b>Presupuesto de publicidad:</b> cuánto se puede gastar en anuncios por cada venta sin perder plata.</li>
+              <li><b>Avisos de stock</b> cuando un producto que se vende bien se está por agotar.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="resultado">
+          <h3>Al terminar el primer mes, Osada tiene</h3>
+          <ul class="clean">
+            <li>Un informe claro de ingresos, egresos, costos y punto de equilibrio.</li>
+            <li>El sistema funcionando, conectado a Tienda Nube, con los costos cargados.</li>
+            <li>El precio sugerido y la ganancia real de cada producto.</li>
+            <li>Un número concreto de cuánto se puede invertir en publicidad por mes.</li>
+            <li>Una capacitación para usar el sistema sin depender de nadie.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mes">
+        <div class="mes-head"><span class="chip">SEGUNDO MES</span><h3 style="font-size:clamp(1.3rem,3.4vw,1.7rem)">Rediseñar la tienda, medirla y vender con publicidad</h3></div>
+        <div class="bloques">
+          <div class="card bloque">
+            <h3>Rediseño completo de la tienda</h3>
+            <p>Rehacemos la tienda en Tienda Nube para que se vea a la altura de la marca y sea fácil comprar, sobre todo desde el celular.</p>
+            <ul class="clean">
+              <li>Página de inicio, categorías y fichas de producto nuevas.</li>
+              <li>Fotos, textos, guía de talles y medios de pago bien visibles.</li>
+              <li>Un recorrido de compra más corto, con menos pasos hasta pagar.</li>
+              <li>Tienda más rápida y mejor posicionada en Google.</li>
+            </ul>
+          </div>
+          <div class="card bloque">
+            <h3>Publicidad junto a su equipo de ads</h3>
+            <p>Trabajamos con el equipo de publicidad que Osada ya tiene. No lo reemplazamos: le damos los números para que cada peso invertido rinda más.</p>
+            <ul class="clean">
+              <li>Cuánto se puede gastar por mes y por venta, con datos del sistema.</li>
+              <li>Qué productos conviene publicitar porque dejan más ganancia.</li>
+              <li>Revisión semanal de las campañas: qué funciona y qué no.</li>
+              <li>Seguimiento de cuánto vuelve en ventas por cada peso en anuncios.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="bloque">
+          <h3>Medición: saber qué pasa en la tienda</h3>
+          <p>Instalamos y configuramos las herramientas que muestran quién entra, de dónde viene y por qué compra o se va.</p>
+          <div class="herr">
+            <div><b>Google Analytics</b><span>Cuántas personas visitan la tienda, de dónde llegan y cuántas terminan comprando.</span></div>
+            <div><b>Google Search Console</b><span>Cómo aparece Osada cuando alguien busca en Google y qué palabras traen visitas.</span></div>
+            <div><b>Microsoft Clarity</b><span>Grabaciones y mapas de calor: se ve dónde tocan, hasta dónde bajan y dónde abandonan.</span></div>
+            <div><b>Píxel de Meta</b><span>Le avisa a Instagram y Facebook quién compró, para que los anuncios encuentren a más personas parecidas.</span></div>
+          </div>
+        </div>
+        <div class="resultado">
+          <h3>Al terminar el segundo mes, Osada tiene</h3>
+          <ul class="clean">
+            <li>La tienda nueva publicada y funcionando.</li>
+            <li>Las cuatro herramientas de medición instaladas y revisadas.</li>
+            <li>Un plan de publicidad acordado con su equipo, basado en ganancia real.</li>
+            <li>Un informe con resultados y los próximos pasos.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band alt">
+    <div class="in stack">
+      <div class="sec-head">
+        <span class="eyebrow">Ejemplo</span>
+        <h2>Cuánto deja cada venta</h2>
+        <p>Esto es lo que el sistema responde por cada producto, con los costos reales de Osada.</p>
+      </div>
+      <div class="ejemplo">
+        <div class="tag" aria-label="Ejemplo de etiqueta de costos">
+          <div class="nombre">Remera básica</div>
+          <table>
+            <tr><td>Tela</td><td>$ 4.200</td></tr>
+            <tr><td>Taller</td><td>$ 3.500</td></tr>
+            <tr><td>Avíos y etiquetas</td><td>$ 600</td></tr>
+            <tr><td>Packaging</td><td>$ 400</td></tr>
+            <tr class="total"><td>Costo</td><td>$ 8.700</td></tr>
+          </table>
+          <div class="precio">$ 29.900</div>
+          <small>precio de venta</small>
+        </div>
+        <div class="cuentas">
+          <div class="card filas">
+            <div class="cuenta"><span>Precio de venta</span><span class="v">$ 29.900</span></div>
+            <div class="cuenta menos"><span>Menos IVA</span><span class="v">− $ 5.189</span></div>
+            <div class="cuenta menos"><span>Menos comisión de cobro y tienda (7 %)</span><span class="v">− $ 2.093</span></div>
+            <div class="cuenta menos"><span>Menos costo de la prenda</span><span class="v">− $ 8.700</span></div>
+            <div class="cuenta final"><span>Queda por cada remera</span><span class="v">$ 13.918</span></div>
+          </div>
+          <div class="pregunta"><b>¿Cuánto puedo poner en publicidad?</b><span>Si quieren que cada venta deje al menos $ 8.000 limpios, pueden invertir hasta <b>$ 5.900 en anuncios por cada venta</b>. Más que eso, se pierde plata.</span></div>
+          <div class="pregunta"><b>¿Cuánto tengo que vender?</b><span>Si los gastos fijos del mes son $ 2.800.000, necesitan vender unas <b>202 remeras por mes</b> para cubrirlos. Ese es el punto de equilibrio.</span></div>
+          <p class="nota">Ejemplo con números inventados.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="in stack">
+      <div class="sec-head">
+        <span class="eyebrow">Calendario</span>
+        <h2>Semana a semana</h2>
+      </div>
+      <div class="cal">
+        <div>
+          <h3>Primer mes</h3>
+          <ol>
+            <li><span class="sem">Semana 1</span><p>Reunión de arranque, accesos y recolección de costos y gastos.</p></li>
+            <li><span class="sem">Semana 2</span><p>Ingresos, egresos y punto de equilibrio. Primer informe.</p></li>
+            <li><span class="sem">Semana 3</span><p>Sistema conectado a Tienda Nube, carga de costos y calculadora de precios.</p></li>
+            <li><span class="sem">Semana 4</span><p>Ganancia por producto, presupuesto de publicidad y capacitación.</p></li>
+          </ol>
+        </div>
+        <div>
+          <h3>Segundo mes</h3>
+          <ol>
+            <li><span class="sem">Semana 5</span><p>Medición instalada, diagnóstico de la tienda actual y propuesta de diseño.</p></li>
+            <li><span class="sem">Semana 6</span><p>Rediseño de inicio, categorías y fichas de producto.</p></li>
+            <li><span class="sem">Semana 7</span><p>Carrito, celular y velocidad. Plan de publicidad con el equipo de ads.</p></li>
+            <li><span class="sem">Semana 8</span><p>Lanzamiento de la tienda nueva, ajustes e informe de resultados.</p></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band alt" id="inversion">
+    <div class="in stack">
+      <div class="sec-head">
+        <span class="eyebrow">Inversión</span>
+        <h2>Un abono mensual, todo incluido</h2>
+      </div>
+      <div class="precio-card">
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div class="monto">$ 1.000.000 <small>por mes</small></div>
+          <p class="sub">Trabajo continuo. Se abona al inicio de cada mes, en pesos argentinos.</p>
+        </div>
+        <ul class="clean">
+          <li>Dos reuniones por semana y trabajo activo todos los días.</li>
+          <li>Análisis de números, sistema a medida y su mantenimiento.</li>
+          <li>Rediseño de la tienda y medición.</li>
+          <li>Trabajo conjunto con el equipo de publicidad.</li>
+          <li>Canal directo por WhatsApp.</li>
+        </ul>
+        <p class="pie">Propuesta válida por 15 días.</p>
+      </div>
+      <div class="dos">
+        <div class="card">
+          <h3>No incluye (lo paga Osada aparte)</h3>
+          <ul class="clean">
+            <li>La inversión en anuncios de Meta y Google, que se paga directo a cada plataforma.</li>
+            <li>El servidor donde funciona el sistema, un costo mensual que se informa antes de contratarlo.</li>
+            <li>El plan de Tienda Nube y cualquier plantilla o aplicación paga que haga falta sumar.</li>
+            <li>Los honorarios del equipo de publicidad que ya trabaja con Osada.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Qué necesito de Osada</h3>
+          <ul class="clean">
+            <li>Acceso de administrador a Tienda Nube.</li>
+            <li>Los costos de las prendas y los gastos del mes, aunque estén desordenados.</li>
+            <li>Acceso a las cuentas de Meta y Google.</li>
+            <li>Una persona de referencia para las reuniones y las decisiones.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="in yo">
+      <div class="yo-top">
+        <div class="avatar" aria-hidden="true">NR</div>
+        <div><h3>Naradi Rocco</h3><p>Desarrollador full-stack y consultor de negocios</p></div>
+      </div>
+      <p>Diseño, programo, integro y acompaño. Hablan conmigo directamente, sin intermediarios, y las decisiones se toman rápido. El sistema y todo lo que armamos queda a nombre de Osada.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="in">
+    <span>© 2026 · Naradi Rocco · Propuesta preparada para Osada Indumentaria</span>
+    <a href="https://github.com/NaraDiRocco" target="_blank" rel="noopener">github.com/NaraDiRocco</a>
+  </div>
+</footer>
+</body>
+</html>
