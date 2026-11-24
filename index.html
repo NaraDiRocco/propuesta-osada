@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#FFFFFF">
 <meta name="robots" content="noindex">
 <title>Propuesta Osada Indumentaria</title>
-<meta name="description" content="Propuesta de trabajo de Nara Di Rocco para Osada Indumentaria: números del negocio, sistema a medida conectado a Tienda Nube, tienda, medición y publicidad.">
+<meta name="description" content="Propuesta de trabajo de Nara Di Rocco para Osada Indumentaria: números del negocio, sistema a medida conectado a Tienda Nube, tienda online, local, medición y publicidad.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
@@ -82,6 +82,10 @@ ul.clean li::before{content:"";position:absolute;left:3px;top:.5em;width:12px;he
 .ritmo .ico{width:40px;height:40px;border-radius:10px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;font-family:var(--mono);font-weight:500;font-size:.95rem}
 .ritmo p{color:var(--muted);font-size:.97rem}
 .nota{font-size:.9rem;color:var(--muted)}
+.exp{background:var(--bg);border-radius:16px;padding:24px;display:grid;grid-template-columns:1fr;gap:20px;box-shadow:0 1px 2px rgba(20,22,28,.05),0 6px 20px rgba(20,22,28,.05)}
+.exp-head{display:flex;flex-direction:column;gap:8px;min-width:0}
+.exp-head h3{font-size:clamp(1.25rem,3vw,1.5rem)}
+.exp-head p{color:var(--muted)}
 
 /* Primeros meses */
 .mes{display:flex;flex-direction:column;gap:28px}
@@ -165,6 +169,8 @@ footer a{color:var(--ink);font-weight:600;text-decoration:none}
   .ritmo{grid-template-columns:repeat(3,minmax(0,1fr))}
   .bloques,.cal,.dos{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
   .herr{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .bloques.tres{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .exp{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;padding:36px;align-items:center}
   .ejemplo{grid-template-columns:minmax(0,330px) minmax(0,1fr);gap:56px}
   .precio-card{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px 48px;padding:44px}
   .precio-card .pie{grid-column:1 / -1}
@@ -195,8 +201,8 @@ footer a{color:var(--ink);font-weight:600;text-decoration:none}
   <header class="hero" id="inicio">
     <div class="in">
       <span class="eyebrow">Propuesta de trabajo · Noviembre 2026</span>
-      <h1>Osada Indumentaria: números claros y una tienda que venda más</h1>
-      <p class="lead">Un acompañamiento integral y continuo. Arrancamos ordenando la plata: cuánto entra, cuánto sale, cuánto deja cada prenda y cuánto se puede invertir en publicidad. Después ponemos todo eso a trabajar en la tienda online.</p>
+      <h1>Osada Indumentaria: números claros y más ventas, online y en el local</h1>
+      <p class="lead">Un acompañamiento integral y continuo. Arrancamos ordenando la plata: cuánto entra, cuánto sale, cuánto deja cada prenda y cuánto se puede invertir en publicidad. Después ponemos todo eso a trabajar en la tienda online y en el local.</p>
       <div class="cta">
         <a class="btn pri" href="#alcance">Ver la propuesta</a>
         <a class="btn sec" href="#inversion">Inversión</a>
@@ -221,7 +227,19 @@ footer a{color:var(--ink);font-weight:600;text-decoration:none}
         <div class="card"><span class="ico">L–V</span><h3>Trabajo activo todos los días</h3><p>No es una consultoría de reuniones. Entre reunión y reunión estamos armando, cargando, probando y corrigiendo.</p></div>
         <div class="card"><span class="ico">→</span><h3>Un canal directo</h3><p>Un grupo de WhatsApp para dudas del día a día y para que vean los avances a medida que salen.</p></div>
       </div>
-      <p class="nota">Ya armé este mismo tipo de sistema para otra marca de indumentaria con tienda online y locales. Eso nos deja empezar rápido y saber dónde suelen estar los problemas.</p>
+      <div class="exp">
+        <div class="exp-head">
+          <span class="eyebrow">Experiencia</span>
+          <h3>No arrancamos de cero</h3>
+          <p>Hoy trabajo con una marca de indumentaria con locales y tienda online, para la que armé su sistema propio. Con Osada aplicamos lo que ya está probado, a la medida de su negocio.</p>
+        </div>
+        <ul class="clean">
+          <li>Ventas de la tienda online y de los locales en un solo panel, que se actualiza solo.</li>
+          <li>Costo, ganancia y punto de equilibrio con números que coinciden con la contabilidad.</li>
+          <li>Stock de cada local y de la web, con avisos para reponer a tiempo.</li>
+          <li>Dejaron de bajar planillas a mano y de pagar un tablero externo.</li>
+        </ul>
+      </div>
     </div>
   </section>
 
@@ -240,7 +258,7 @@ footer a{color:var(--ink);font-weight:600;text-decoration:none}
             <h3>Diagnóstico de la plata</h3>
             <p>Juntamos toda la información del negocio y la ponemos en limpio, en lenguaje simple.</p>
             <ul class="clean">
-              <li><b>Ingresos:</b> cuánto se vende por mes, por canal y por producto.</li>
+              <li><b>Ingresos:</b> cuánto se vende por mes en el local y en la tienda online, y qué productos se venden en cada uno.</li>
               <li><b>Egresos:</b> todo lo que sale, separado en gastos fijos (alquiler, sueldos, servicios) y gastos que dependen de cuánto se vende (comisiones, envíos, packaging).</li>
               <li><b>Costo real de cada prenda:</b> lo que se le paga al proveedor, más el flete, el packaging y todo lo que se suma hasta que llega a la clienta.</li>
               <li><b>Punto de equilibrio:</b> cuánto hay que vender por mes para cubrir todos los gastos. A partir de ahí, todo lo que se vende es ganancia.</li>
@@ -248,12 +266,13 @@ footer a{color:var(--ink);font-weight:600;text-decoration:none}
           </div>
           <div class="card bloque">
             <h3>Sistema a medida conectado a Tienda Nube</h3>
-            <p>Una herramienta propia de Osada, con usuario y contraseña, que se actualiza sola con lo que pasa en la tienda.</p>
+            <p>Una herramienta propia de Osada, con usuario y contraseña, que junta lo que pasa en la tienda online y en el local.</p>
             <ul class="clean">
-              <li><b>Todo en un solo lugar:</b> ventas, stock, productos y clientes, sin bajar planillas.</li>
+              <li><b>Todo en un solo lugar:</b> ventas del local y de la web, stock, productos y clientes, sin bajar planillas.</li>
+              <li><b>Stock de los dos canales:</b> qué hay en el local, qué hay para la web y qué conviene mover de un lado al otro.</li>
               <li><b>Compras a proveedores:</b> qué se compró, a quién y a qué precio, con el historial de cada costo cuando sube.</li>
               <li><b>Calculadora de precios:</b> ponen el costo y la ganancia que quieren, y el sistema sugiere el precio de venta.</li>
-              <li><b>Ganancia exacta</b> por prenda, por venta y por mes, después de impuestos y comisiones.</li>
+              <li><b>Ganancia exacta</b> por prenda, por canal y por mes, después de impuestos y comisiones.</li>
               <li><b>Presupuesto de publicidad:</b> cuánto se puede gastar en anuncios por cada venta sin perder plata.</li>
               <li><b>Cuándo volver a comprar:</b> aviso cuando un producto que se vende bien se está por agotar, para reponerlo a tiempo.</li>
             </ul>
@@ -263,7 +282,7 @@ footer a{color:var(--ink);font-weight:600;text-decoration:none}
           <h3>Al terminar el primer mes, Osada tiene</h3>
           <ul class="clean">
             <li>Un informe claro de ingresos, egresos, costos y punto de equilibrio.</li>
-            <li>El sistema funcionando, conectado a Tienda Nube, con los costos cargados.</li>
+            <li>El sistema funcionando, con las ventas del local y de la web juntas y los costos cargados.</li>
             <li>El precio sugerido y la ganancia real de cada producto.</li>
             <li>Un número concreto de cuánto se puede invertir en publicidad por mes.</li>
             <li>Una capacitación para usar el sistema sin depender de nadie.</li>
@@ -272,10 +291,10 @@ footer a{color:var(--ink);font-weight:600;text-decoration:none}
       </div>
 
       <div class="mes">
-        <div class="mes-head"><span class="chip">SEGUNDO MES</span><h3 style="font-size:clamp(1.3rem,3.4vw,1.7rem)">Rediseñar la tienda, medirla y vender con publicidad</h3></div>
-        <div class="bloques">
+        <div class="mes-head"><span class="chip">SEGUNDO MES</span><h3 style="font-size:clamp(1.3rem,3.4vw,1.7rem)">Tienda online nueva, un local que venda más y publicidad que rinda</h3></div>
+        <div class="bloques tres">
           <div class="card bloque">
-            <h3>Rediseño completo de la tienda</h3>
+            <h3>Rediseño completo de la tienda online</h3>
             <p>Rehacemos la tienda en Tienda Nube para que se vea a la altura de la marca y sea fácil comprar, sobre todo desde el celular.</p>
             <ul class="clean">
               <li>Página de inicio, categorías y fichas de producto nuevas.</li>
@@ -294,6 +313,16 @@ footer a{color:var(--ink);font-weight:600;text-decoration:none}
               <li>Seguimiento de cuánto vuelve en ventas por cada peso en anuncios.</li>
             </ul>
           </div>
+          <div class="card bloque">
+            <h3>Optimizar el local</h3>
+            <p>Usamos los números del sistema para que el local venda más y no se quede con mercadería parada.</p>
+            <ul class="clean">
+              <li>Qué se vende en el local y qué en la web, y qué días y horarios se vende más.</li>
+              <li>Qué exhibir y qué poner en la vidriera, según lo que más rota y más deja.</li>
+              <li>Qué reponer y qué liquidar, para no tener plata quieta en el depósito.</li>
+              <li>Cómo llevar a las clientas del local a la web y a Instagram, y al revés.</li>
+            </ul>
+          </div>
         </div>
         <div class="bloque">
           <h3>Medición: saber qué pasa en la tienda</h3>
@@ -308,7 +337,8 @@ footer a{color:var(--ink);font-weight:600;text-decoration:none}
         <div class="resultado">
           <h3>Al terminar el segundo mes, Osada tiene</h3>
           <ul class="clean">
-            <li>La tienda nueva publicada y funcionando.</li>
+            <li>La tienda online nueva publicada y funcionando.</li>
+            <li>Un plan para el local: qué exhibir, qué reponer y cómo atraer más clientas.</li>
             <li>Las cuatro herramientas de medición instaladas y revisadas.</li>
             <li>Un plan de publicidad acordado con su equipo, basado en ganancia real.</li>
             <li>Un informe con resultados y los próximos pasos.</li>
@@ -347,7 +377,7 @@ footer a{color:var(--ink);font-weight:600;text-decoration:none}
           </div>
           <div class="pregunta"><b>¿Cuánto puedo poner en publicidad?</b><span>Si quieren que cada venta deje al menos $ 8.000 limpios, pueden invertir hasta <b>$ 5.900 en anuncios por cada venta</b>. Más que eso, se pierde plata.</span></div>
           <div class="pregunta"><b>¿Cuánto tengo que vender?</b><span>Si los gastos fijos del mes son $ 2.800.000, necesitan vender unas <b>202 remeras por mes</b> para cubrirlos. Ese es el punto de equilibrio.</span></div>
-          <p class="nota">Ejemplo con números inventados.</p>
+          <p class="nota">Ejemplo con números inventados de una venta online. En el local cambian las comisiones y no hay envío, y el sistema hace la cuenta de cada canal por separado.</p>
         </div>
       </div>
     </div>
@@ -365,7 +395,7 @@ footer a{color:var(--ink);font-weight:600;text-decoration:none}
           <ol>
             <li><span class="sem">Semana 1</span><p>Reunión de arranque, accesos y recolección de precios de compra y gastos.</p></li>
             <li><span class="sem">Semana 2</span><p>Ingresos, egresos y punto de equilibrio. Primer informe.</p></li>
-            <li><span class="sem">Semana 3</span><p>Sistema conectado a Tienda Nube, carga de costos y calculadora de precios.</p></li>
+            <li><span class="sem">Semana 3</span><p>Sistema con las ventas de la web y del local, carga de costos y calculadora de precios.</p></li>
             <li><span class="sem">Semana 4</span><p>Ganancia por producto, presupuesto de publicidad y capacitación.</p></li>
           </ol>
         </div>
@@ -373,8 +403,8 @@ footer a{color:var(--ink);font-weight:600;text-decoration:none}
           <h3>Segundo mes</h3>
           <ol>
             <li><span class="sem">Semana 5</span><p>Medición instalada, diagnóstico de la tienda actual y propuesta de diseño.</p></li>
-            <li><span class="sem">Semana 6</span><p>Rediseño de inicio, categorías y fichas de producto.</p></li>
-            <li><span class="sem">Semana 7</span><p>Carrito, celular y velocidad. Plan de publicidad con el equipo de ads.</p></li>
+            <li><span class="sem">Semana 6</span><p>Rediseño de inicio, categorías y fichas de producto. Análisis de ventas del local.</p></li>
+            <li><span class="sem">Semana 7</span><p>Carrito, celular y velocidad. Plan para el local y plan de publicidad con el equipo de ads.</p></li>
             <li><span class="sem">Semana 8</span><p>Lanzamiento de la tienda nueva, ajustes e informe de resultados.</p></li>
           </ol>
         </div>
@@ -396,7 +426,7 @@ footer a{color:var(--ink);font-weight:600;text-decoration:none}
         <ul class="clean">
           <li>Dos reuniones por semana y trabajo activo todos los días.</li>
           <li>Análisis de números, sistema a medida y su mantenimiento.</li>
-          <li>Rediseño de la tienda y medición.</li>
+          <li>Rediseño de la tienda online, mejoras del local y medición.</li>
           <li>Trabajo conjunto con el equipo de publicidad.</li>
           <li>Canal directo por WhatsApp.</li>
         </ul>
@@ -416,6 +446,7 @@ footer a{color:var(--ink);font-weight:600;text-decoration:none}
           <h3>Qué necesito de Osada</h3>
           <ul class="clean">
             <li>Acceso de administrador a Tienda Nube.</li>
+            <li>Cómo se registran hoy las ventas del local: sistema, planilla o cuaderno.</li>
             <li>Los precios de compra a proveedores y los gastos del mes, aunque estén desordenados.</li>
             <li>Acceso a las cuentas de Meta y Google.</li>
             <li>Una persona de referencia para las reuniones y las decisiones.</li>
