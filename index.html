@@ -242,7 +242,7 @@ footer a{color:var(--ink);font-weight:600;text-decoration:none}
             <ul class="clean">
               <li><b>Ingresos:</b> cuánto se vende por mes, por canal y por producto.</li>
               <li><b>Egresos:</b> todo lo que sale, separado en gastos fijos (alquiler, sueldos, servicios) y gastos que dependen de cuánto se vende (comisiones, envíos, packaging).</li>
-              <li><b>Costo real de cada prenda:</b> tela, taller, avíos, etiquetas y packaging.</li>
+              <li><b>Costo real de cada prenda:</b> lo que se le paga al proveedor, más el flete, el packaging y todo lo que se suma hasta que llega a la clienta.</li>
               <li><b>Punto de equilibrio:</b> cuánto hay que vender por mes para cubrir todos los gastos. A partir de ahí, todo lo que se vende es ganancia.</li>
             </ul>
           </div>
@@ -251,11 +251,11 @@ footer a{color:var(--ink);font-weight:600;text-decoration:none}
             <p>Una herramienta propia de Osada, con usuario y contraseña, que se actualiza sola con lo que pasa en la tienda.</p>
             <ul class="clean">
               <li><b>Todo en un solo lugar:</b> ventas, stock, productos y clientes, sin bajar planillas.</li>
-              <li><b>Carga de costos</b> de cada prenda, con su historial cuando cambian.</li>
+              <li><b>Compras a proveedores:</b> qué se compró, a quién y a qué precio, con el historial de cada costo cuando sube.</li>
               <li><b>Calculadora de precios:</b> ponen el costo y la ganancia que quieren, y el sistema sugiere el precio de venta.</li>
               <li><b>Ganancia exacta</b> por prenda, por venta y por mes, después de impuestos y comisiones.</li>
               <li><b>Presupuesto de publicidad:</b> cuánto se puede gastar en anuncios por cada venta sin perder plata.</li>
-              <li><b>Avisos de stock</b> cuando un producto que se vende bien se está por agotar.</li>
+              <li><b>Cuándo volver a comprar:</b> aviso cuando un producto que se vende bien se está por agotar, para reponerlo a tiempo.</li>
             </ul>
           </div>
         </div>
@@ -329,9 +329,8 @@ footer a{color:var(--ink);font-weight:600;text-decoration:none}
         <div class="tag" aria-label="Ejemplo de etiqueta de costos">
           <div class="nombre">Remera básica</div>
           <table>
-            <tr><td>Tela</td><td>$ 4.200</td></tr>
-            <tr><td>Taller</td><td>$ 3.500</td></tr>
-            <tr><td>Avíos y etiquetas</td><td>$ 600</td></tr>
+            <tr><td>Compra al proveedor</td><td>$ 7.600</td></tr>
+            <tr><td>Flete</td><td>$ 700</td></tr>
             <tr><td>Packaging</td><td>$ 400</td></tr>
             <tr class="total"><td>Costo</td><td>$ 8.700</td></tr>
           </table>
@@ -343,7 +342,7 @@ footer a{color:var(--ink);font-weight:600;text-decoration:none}
             <div class="cuenta"><span>Precio de venta</span><span class="v">$ 29.900</span></div>
             <div class="cuenta menos"><span>Menos IVA</span><span class="v">− $ 5.189</span></div>
             <div class="cuenta menos"><span>Menos comisión de cobro y tienda (7 %)</span><span class="v">− $ 2.093</span></div>
-            <div class="cuenta menos"><span>Menos costo de la prenda</span><span class="v">− $ 8.700</span></div>
+            <div class="cuenta menos"><span>Menos costo de la prenda (compra, flete y packaging)</span><span class="v">− $ 8.700</span></div>
             <div class="cuenta final"><span>Queda por cada remera</span><span class="v">$ 13.918</span></div>
           </div>
           <div class="pregunta"><b>¿Cuánto puedo poner en publicidad?</b><span>Si quieren que cada venta deje al menos $ 8.000 limpios, pueden invertir hasta <b>$ 5.900 en anuncios por cada venta</b>. Más que eso, se pierde plata.</span></div>
@@ -364,7 +363,7 @@ footer a{color:var(--ink);font-weight:600;text-decoration:none}
         <div>
           <h3>Primer mes</h3>
           <ol>
-            <li><span class="sem">Semana 1</span><p>Reunión de arranque, accesos y recolección de costos y gastos.</p></li>
+            <li><span class="sem">Semana 1</span><p>Reunión de arranque, accesos y recolección de precios de compra y gastos.</p></li>
             <li><span class="sem">Semana 2</span><p>Ingresos, egresos y punto de equilibrio. Primer informe.</p></li>
             <li><span class="sem">Semana 3</span><p>Sistema conectado a Tienda Nube, carga de costos y calculadora de precios.</p></li>
             <li><span class="sem">Semana 4</span><p>Ganancia por producto, presupuesto de publicidad y capacitación.</p></li>
@@ -417,7 +416,7 @@ footer a{color:var(--ink);font-weight:600;text-decoration:none}
           <h3>Qué necesito de Osada</h3>
           <ul class="clean">
             <li>Acceso de administrador a Tienda Nube.</li>
-            <li>Los costos de las prendas y los gastos del mes, aunque estén desordenados.</li>
+            <li>Los precios de compra a proveedores y los gastos del mes, aunque estén desordenados.</li>
             <li>Acceso a las cuentas de Meta y Google.</li>
             <li>Una persona de referencia para las reuniones y las decisiones.</li>
           </ul>
